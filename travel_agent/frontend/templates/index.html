@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>India Travel Agent — Powered by IBM watsonx</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">✈</span>
+        <div>
+          <span class="logo-title">India Travel Agent</span>
+          <span class="logo-sub">Powered by IBM watsonx Granite</span>
+        </div>
+      </div>
+      <div class="header-badges">
+        <span class="badge badge-green">● Online</span>
+        <span class="badge badge-blue">Granite-4</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN LAYOUT ===== -->
+  <div class="layout">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-heading">Popular Destinations</h3>
+        <ul class="dest-list">
+          <li class="dest-item" data-query="Plan a 5-day trip to Rajasthan">
+            <span class="dest-icon">🏰</span>
+            <div>
+              <strong>Rajasthan</strong>
+              <small>Palaces &amp; Desert</small>
+            </div>
+          </li>
+          <li class="dest-item" data-query="Best things to do in Kerala">
+            <span class="dest-icon">🌴</span>
+            <div>
+              <strong>Kerala</strong>
+              <small>Backwaters &amp; Hills</small>
+            </div>
+          </li>
+          <li class="dest-item" data-query="Top beaches and activities in Goa">
+            <span class="dest-icon">🏖</span>
+            <div>
+              <strong>Goa</strong>
+              <small>Beaches &amp; Nightlife</small>
+            </div>
+          </li>
+          <li class="dest-item" data-query="Ladakh road trip itinerary">
+            <span class="dest-icon">🏔</span>
+            <div>
+              <strong>Ladakh</strong>
+              <small>Mountains &amp; Adventure</small>
+            </div>
+          </li>
+          <li class="dest-item" data-query="Andaman islands travel guide">
+            <span class="dest-icon">🌊</span>
+            <div>
+              <strong>Andaman</strong>
+              <small>Islands &amp; Diving</small>
+            </div>
+          </li>
+          <li class="dest-item" data-query="Varanasi and Agra sightseeing plan">
+            <span class="dest-icon">🕌</span>
+            <div>
+              <strong>Varanasi &amp; Agra</strong>
+              <small>Heritage &amp; Spirituality</small>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-heading">Travel Tips</h3>
+        <ul class="tips-list">
+          <li class="tip-item" data-query="What is the best season to travel in India?">Best Season Guide</li>
+          <li class="tip-item" data-query="Budget travel tips for India">Budget Travel Tips</li>
+          <li class="tip-item" data-query="Train travel tips across India">Train Travel Guide</li>
+          <li class="tip-item" data-query="Food safety tips while travelling in India">Food &amp; Safety Tips</li>
+        </ul>
+      </div>
+
+      <button class="clear-btn" id="clearBtn">🗑 Clear Chat</button>
+    </aside>
+
+    <!-- ===== CHAT AREA ===== -->
+    <main class="chat-area">
+
+      <!-- Welcome card (visible before first message) -->
+      <div class="welcome-card" id="welcomeCard">
+        <div class="welcome-icon">🇮🇳</div>
+        <h2>Namaste! I'm your India Travel Agent</h2>
+        <p>Ask me anything about travelling across India — destinations, itineraries, budgets, trains, hotels, and more.</p>
+        <div class="suggestions" id="suggestions">
+          <!-- populated by JS -->
+        </div>
+      </div>
+
+      <!-- Message thread -->
+      <div class="messages" id="messages"></div>
+
+      <!-- Typing indicator -->
+      <div class="typing-indicator hidden" id="typingIndicator">
+        <div class="typing-bubble"><span></span><span></span><span></span></div>
+        <span class="typing-text">Planning your trip…</span>
+      </div>
+
+      <!-- Input bar -->
+      <form class="input-bar" id="chatForm">
+        <textarea
+          id="userInput"
+          class="input-field"
+          placeholder="Ask about a destination, itinerary, or budget…"
+          rows="1"
+          maxlength="1000"
+        ></textarea>
+        <button type="submit" class="send-btn" id="sendBtn" aria-label="Send">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </form>
+
+    </main>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
