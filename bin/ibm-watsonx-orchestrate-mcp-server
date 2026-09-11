@@ -1,0 +1,12 @@
+#!/bin/sh
+'''exec' "$(dirname -- "$(realpath -- "$0")")"/'python' "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import sys
+from ibm_watsonx_orchestrate_mcp_server.server import start_server
+if __name__ == "__main__":
+    if sys.argv[0].endswith("-script.pyw"):
+        sys.argv[0] = sys.argv[0][:-11]
+    elif sys.argv[0].endswith(".exe"):
+        sys.argv[0] = sys.argv[0][:-4]
+    sys.exit(start_server())
